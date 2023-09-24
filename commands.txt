@@ -1,0 +1,17 @@
+docker run -it -p 4002:5000 rajat/multi-server
+docker build -t rajat1366/multi-client .
+docker push rajat1366/multi-client 
+docker-compose up --build
+kubectl apply -f k8s
+kubectl get pods
+kubectl describe pods POD_NAME
+ 
+kubectl get services
+kubectl create secret generic pgpassword --from-literal PGPASSWORD=12345test
+kubectl get secrets 
+
+https://kubernetes.github.io/ingress-nginx/deploy/
+kubectl get pods -n ingress-nginx
+
+kubectl get pv
+kubectl delete -f k8s
